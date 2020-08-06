@@ -12,5 +12,10 @@
  *
  *= require_tree .
  *= require_self
- *= require font-awesome
  */
+
+
+@font-face {
+  font-family: 'chicago';
+  src: url('chicago.ttf') format('truetype');
+}
