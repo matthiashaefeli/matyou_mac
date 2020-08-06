@@ -28,6 +28,15 @@ body {
   cursor: pointer;
 }
 
+.system_disk,
+.trash,
+.terminal,
+.blogs,
+.notes,
+.challenges {
+  cursor: pointer;
+}
+
 // system disk
 
 .system_disk {
@@ -96,19 +105,19 @@ body {
 
 // blog folder
 
-.blog {
+.blogs {
   padding: 30px;
   position: absolute;
   bottom: 0;
   left: 300px;
 }
 
-.blog > img {
+.blogs > img {
   width: 60px;
 }
 
-.blog > div {
-  margin-top: -10px;
+.blogs > div {
+  margin-top: -8px;
   background-color: white;
   vertical-align: bottom;
   font-size: 15px;
@@ -119,20 +128,20 @@ body {
 
 // good to know folder
 
-.good_to_know {
+.notes {
   padding: 30px;
   position: absolute;
   bottom: 0;
   left: 130px;
 }
 
-.good_to_know > img {
+.notes > img {
   margin-left: 30px;
   width: 60px;
 }
 
-.good_to_know > div {
-  margin-top: -10px;
+.notes > div {
+  margin-top: -8px;
   background-color: white;
   vertical-align: bottom;
   font-size: 15px;
@@ -156,7 +165,7 @@ body {
 }
 
 .challenges > div {
-  margin-top: -10px;
+  margin-top: -8px;
   background-color: white;
   vertical-align: bottom;
   font-size: 15px;
@@ -168,7 +177,7 @@ body {
 // window
 
 .window {
-  width: 400px;
+  width: 500px;
   height: 300px;
   background-color: white;
   border: 1px solid black;
@@ -188,4 +197,13 @@ body {
   width: 100%;
   border-bottom: 0.5px solid grey;
   font-size: 10px;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#renderFolder {
+  padding: 120px;
 }

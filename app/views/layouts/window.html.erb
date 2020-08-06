@@ -1,0 +1,11 @@
+<div class='window'>
+  <div class='window_title'><%= @title %></div>
+  <div class='window_count'>
+    <div><%= @count %> Files</div>
+    <div><%= @infolder %> MB in disk</div>
+    <div><%= @available %> GB available</div>
+  </div>
+  <div id='windowContent'>
+    <%= yield %>
+  </div>
+</div>
