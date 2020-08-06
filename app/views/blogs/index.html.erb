@@ -1,0 +1,14 @@
+<div class='container'>
+  <% 10.times do %>
+      <div class='mac_folder'>
+      <img src='<%= asset_path 'mac_folder.png' %>' alt='folder'>
+      <div><span>blog</span></div>
+    </div>
+  <% end %>
+  <% @blogs.each do |blog| %>
+    <div class='mac_folder'>
+      <img src='<%= asset_path 'mac_folder.png' %>' alt='folder'>
+      <div><span><%= blog.title %></span></div>
+    </div>
+  <% end %>
+</div>
