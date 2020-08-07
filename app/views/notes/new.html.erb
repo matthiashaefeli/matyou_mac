@@ -1,0 +1,8 @@
+<div>
+  <p>Create new Note</p>
+  <%= form_with model: @note do |f| %>
+    <p>Title: <%= f.text_field :title %></p>
+    <p>File: <%= f.file_field :note_file %></p>
+    <p><%= f.submit "Create" %></p>
+  <% end %>
+</div>

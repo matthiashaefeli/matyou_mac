@@ -17,3 +17,14 @@ window.$ = $
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+
+window.create = (e, link) => {
+  e.preventDefault();
+  $.ajax({
+    url: link.href,
+    method: 'get',
+    success: function(response) {
+       $('#renderFolder').html(response)
+    }
+  })
+}

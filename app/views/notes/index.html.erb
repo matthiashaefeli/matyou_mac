@@ -1,14 +1,14 @@
 <div class='container'>
-  <% 10.times do %>
-      <div class='mac_folder'>
-      <img src='<%= asset_path 'mac_folder.png' %>' alt='folder'>
-      <div><span>notes</span></div>
-    </div>
-  <% end %>
+  <%= link_to 'New', new_note_path, onclick: 'create(event, this)' %>
   <% @notes.each do |note| %>
     <div class='mac_folder'>
-      <img src='<%= asset_path 'mac_folder.png' %>' alt='folder'>
-      <div><span><%= note.title %></span></div>
+      <%= link_to blog.link, target: '_blank', class: 'mac_folder_link' do %>
+        <img src='<%= asset_path 'mac_folder.png' %>' alt='folder'>
+        <div><span><%= note.title %></span></div>
+      <% end %>
+      <%= link_to note_path(note.id), method: 'delete' do %>
+        <i class="fas fa-dumpster"></i>
+      <% end %>
     </div>
   <% end %>
 </div>
