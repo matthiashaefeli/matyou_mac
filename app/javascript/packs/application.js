@@ -10,6 +10,12 @@ require("channels")
 import "@fortawesome/fontawesome-free/css/all.css";
 window.$ = $
 
+require('jquery-ui');
+
+// jquery-ui theme
+require.context('file-loader?name=[path][name].[ext]&context=node_modules/jquery-ui-dist!jquery-ui-dist', true,    /jquery-ui\.css/ );
+require.context('file-loader?name=[path][name].[ext]&context=node_modules/jquery-ui-dist!jquery-ui-dist', true,    /jquery-ui\.theme\.css/ );
+
 
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
@@ -44,7 +50,7 @@ window.bigger_window = (span) => {
 }
 
 window.open_folder = (folder) => {
-  const url = $(folder).attr('class');
+  const url = $(folder).attr('class').split(' ')[0];
   $.ajax({
     url: url,
     method: 'get',
