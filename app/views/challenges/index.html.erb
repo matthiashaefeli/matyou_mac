@@ -1,5 +1,7 @@
 <div class='container'>
-  <%= link_to 'New', new_challenge_path, onclick: 'create(event, this)' %>
+  <% if current_user %>
+    <%= link_to 'New', new_challenge_path, onclick: 'create(event, this)' %>
+  <% end %>
   <% @challenges.each do |challenge| %>
     <div class='mac_folder'>
       <%= link_to challenge.link, target: '_blank', class: 'mac_folder_link' do %>

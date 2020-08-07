@@ -1,4 +1,6 @@
 class BlogsController < ApplicationController
+  before_action :user_logged_in?, except: :index
+
   def index
     # Todo: maybe order that with create at newest or whatever
     @blogs = Blog.all
