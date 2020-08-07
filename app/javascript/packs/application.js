@@ -28,3 +28,28 @@ window.create = (e, link) => {
     }
   })
 }
+
+window.close_window = (span) => {
+  $(span).closest('.window').remove()
+  $('#renderFolder')
+    .addClass('render_folder')
+    .removeClass('render_folder_full')
+}
+
+window.bigger_window = (span) => {
+  const div = $(span).closest('.window');
+  $('#renderFolder')
+    .removeClass('render_folder')
+    .addClass('render_folder_full');
+}
+
+window.open_folder = (folder) => {
+  const url = $(folder).attr('class');
+  $.ajax({
+    url: url,
+    method: 'get',
+    success: function(response) {
+      $('#renderFolder').html(response)
+    }
+  })
+}

@@ -1,5 +1,13 @@
 <div class='window'>
-  <div class='window_title'><%= @title %></div>
+  <div class='window_title'>
+    <span class='bigger_window' onclick='bigger_window(this)'>
+      <i class='far fa-square'></i>
+    </span>
+    <%= @title %>
+    <span class='close_window' onclick='close_window(this)'>
+      <i class='fas fa-square'></i>
+    </span>
+  </div>
   <div class='window_count'>
     <div><%= @count %> Files</div>
     <div><%= @infolder %> MB in disk</div>
