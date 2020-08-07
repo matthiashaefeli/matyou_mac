@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 2020_08_06_231306) do
 
   create_table "challenges", force: :cascade do |t|
     t.string "title"
+    t.string "link"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

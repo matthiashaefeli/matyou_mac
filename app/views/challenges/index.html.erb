@@ -1,14 +1,14 @@
 <div class='container'>
-  <% 10.times do %>
-      <div class='mac_folder'>
-      <img src='<%= asset_path 'mac_folder.png' %>' alt='folder'>
-      <div><span>challenges</span></div>
-    </div>
-  <% end %>
+  <%= link_to 'New', new_challenge_path, onclick: 'create(event, this)' %>
   <% @challenges.each do |challenge| %>
     <div class='mac_folder'>
-      <img src='<%= asset_path 'mac_folder.png' %>' alt='folder'>
-      <div><span><%= challenge.title %></span></div>
+      <%= link_to challenge.link, target: '_blank', class: 'mac_folder_link' do %>
+        <img src='<%= asset_path 'mac_folder.png' %>' alt='folder'>
+        <div><span><%= challenge.title %></span></div>
+      <% end %>
+      <%= link_to challenge_path(challenge.id), method: 'delete' do %>
+        <i class="fas fa-dumpster"></i>
+      <% end %>
     </div>
   <% end %>
 </div>

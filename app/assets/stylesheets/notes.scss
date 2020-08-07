@@ -8,17 +8,22 @@
   padding: 30px;
 }
 
-.mac_folder > img {
+.mac_folder > a > img {
   margin-left: 18px;
   width: 60px;
 }
 
-.mac_folder > div {
-  margin-top: -10px;
-  background-color: white;
-  vertical-align: bottom;
+.mac_folder > a > div {
+  // margin-top: -10px;
+  // background-color: white;
+  // vertical-align: bottom;
   font-size: 15px;
-  padding: 0 3px 0;
+  // padding: 0 3px 0;
   width: 90px;
   text-align: center;
+}
+
+.mac_folder_link {
+  text-decoration: none;
+  color: black;
 }

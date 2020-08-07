@@ -1,0 +1,8 @@
+<div>
+  <p>Create new Challenge</p>
+  <%= form_with model: @challenge do |f| %>
+    <p>Title: <%= f.text_field :title %></p>
+    <p>Link: <%= f.text_field :link %></p>
+    <p><%= f.submit "Create" %></p>
+  <% end %>
+</div>

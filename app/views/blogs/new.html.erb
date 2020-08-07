@@ -1,0 +1,8 @@
+<div>
+  <p>Create new Blog</p>
+  <%= form_with model: @blog do |f| %>
+    <p>Title: <%= f.text_field :title %></p>
+    <p>Link: <%= f.text_field :link %></p>
+    <p><%= f.submit "Create" %></p>
+  <% end %>
+</div>
