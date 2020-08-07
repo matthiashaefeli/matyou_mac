@@ -20,18 +20,21 @@ class NotesController < ApplicationController
 
   def create
     note = Note.new(note_params)
+    note.note_file.attach(params[:note][:note_file])
     note.save
     redirect_to root_path
   end
 
   def destroy
-    Note.find(params[:id]).delete
+    note = Note.find(params[:id])
+    note.note_file.purge
+    note.delete
     redirect_to root_path
   end
 
   private
 
   def note_params
-    params.require(:note).permit(:title, :note_file)
+    params.require(:note).permit(:title)
   end
 end

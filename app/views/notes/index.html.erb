@@ -2,7 +2,7 @@
   <%= link_to 'New', new_note_path, onclick: 'create(event, this)' %>
   <% @notes.each do |note| %>
     <div class='mac_folder'>
-      <%= link_to blog.link, target: '_blank', class: 'mac_folder_link' do %>
+      <%= link_to url_for(note.note_file), target: '_blank', class: 'mac_folder_link' do %>
         <img src='<%= asset_path 'mac_folder.png' %>' alt='folder'>
         <div><span><%= note.title %></span></div>
       <% end %>
