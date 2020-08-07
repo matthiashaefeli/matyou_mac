@@ -23,18 +23,5 @@
     <img src='<%= asset_path 'folder.png' %>' alt='folder'>
     <div><span>Challenges</span></div>
   </div>
-  <div id='renderFolder'></div>
+  <div id='renderFolder' class='render_folder'></div>
 </div>
-
-<script>
-  function open_folder(folder) {
-    const url = $(folder).attr('class');
-    $.ajax({
-      url: url,
-      method: 'get',
-      success: function(response) {
-        $('#renderFolder').html(response)
-      }
-    })
-  }
-</script>
