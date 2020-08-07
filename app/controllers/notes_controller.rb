@@ -1,4 +1,5 @@
 class NotesController < ApplicationController
+  include UsersHelper
   before_action :user_logged_in?, except: :index
 
   def index
