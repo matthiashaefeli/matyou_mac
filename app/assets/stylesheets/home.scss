@@ -212,11 +212,28 @@ body {
   padding: 120px;
 }
 
-.render_folder_full {
+.render_full {
   width: 90vw;
   height: 80vh;
   position: absolute;
   z-index: +1;
+}
+
+// terminal
+
+.render_terminal {
+  width: 500px;
+  height: 300px;
+  position: absolute;
+  top: 142px;
+  right: 50px;
+}
+
+.terminal_text {
+  width: 500px;
+  height: 280px;
+  background-color: black;
+  color: red;
 }
 
 .close_window {

@@ -8,11 +8,13 @@
       <i class='fas fa-square'></i>
     </span>
   </div>
-  <div class='window_count'>
-    <div><%= @count %> Files</div>
-    <div><%= @infolder %> MB in disk</div>
-    <div><%= @available %> GB available</div>
-  </div>
+  <% if @count %>
+    <div class='window_count'>
+      <div><%= @count %> Files</div>
+      <div><%= @infolder %> MB in disk</div>
+      <div><%= @available %> GB available</div>
+    </div>
+  <% end %>
   <div id='windowContent'>
     <%= yield %>
   </div>
