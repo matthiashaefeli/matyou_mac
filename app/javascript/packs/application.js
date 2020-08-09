@@ -39,14 +39,14 @@ window.close_window = (span) => {
   $(span).closest('.window').remove()
   $('#renderFolder')
     .addClass('render_folder')
-    .removeClass('render_folder_full')
+    .removeClass('render_full')
 }
 
 window.bigger_window = (span) => {
   const div = $(span).closest('.window');
   $('#renderFolder')
     .removeClass('render_folder')
-    .addClass('render_folder_full');
+    .addClass('render_full');
 }
 
 window.open_folder = (folder) => {
@@ -56,6 +56,20 @@ window.open_folder = (folder) => {
     method: 'get',
     success: function(response) {
       $('#renderFolder').html(response)
+    }
+  })
+}
+
+window.open_terminal = () => {
+  $.ajax({
+    url: '/home/terminal',
+    method: 'get',
+    success: function(response) {
+      $('#renderTerminal').html(response);
+      const text = ['Hi', 'kh', 'lkjsdf', 'dddd', 'bbbbb'];
+      // $('.terminal_text').append(word)
+      // Todo: add promise to write the hole text word by word
+
     }
   })
 }
