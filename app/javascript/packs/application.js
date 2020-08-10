@@ -36,17 +36,26 @@ window.create = (e, link) => {
 }
 
 window.close_window = (span) => {
-  $(span).closest('.window').remove()
-  $('#renderFolder')
-    .addClass('render_folder')
+  const div = $(span).closest('.render_full')
+  div
+    .addClass('render_window')
     .removeClass('render_full')
+  $(span).closest('.window').remove()
 }
 
 window.bigger_window = (span) => {
-  const div = $(span).closest('.window');
-  $('#renderFolder')
-    .removeClass('render_folder')
-    .addClass('render_full');
+  let div = $(span).closest('.render_window')
+  if (div.length) {
+    div
+      .removeClass('render_window')
+      .addClass('render_full');
+  } else {
+    div =  $(span).closest('.render_full')
+    div
+      .removeClass('render_full')
+      .addClass('render_window');
+  }
+
 }
 
 window.open_folder = (folder) => {
