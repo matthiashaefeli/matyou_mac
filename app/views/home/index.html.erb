@@ -1,33 +1,47 @@
 <div class='home'>
-  <div class='system_disk'>
-    <img src='<%= asset_path 'floppy.png' %>' alt='system_disk'>
-    <div><span>System Disk</span></div>
+
+  <div class='links_1'>
+    <div class='system_disk'>
+      <img src='<%= asset_path 'floppy.png' %>' alt='system_disk'>
+      <div><span>System Disk</span></div>
+    </div>
   </div>
-  <div class='trash'>
-    <img src='<%= asset_path 'trash.png' %>' alt='trash'>
-    <div><span>Trash</span></div>
+
+  <div class='window_content'>
+    <div id='renderFolder' class='render_folder'></div>
+    <div id='renderTerminal' class='render_terminal'></div>
   </div>
-  <div class='terminal' ondblclick='open_terminal()'>
-    <img src='<%= asset_path 'terminal.png' %>' alt='terminal'>
-    <div><span>Terminal</span></div>
+
+  <div class='links_2'>
+    <div class='trash'>
+      <img src='<%= asset_path 'trash.png' %>' alt='trash'>
+      <div><span>Trash</span></div>
+    </div>
+
+    <div class='notes content_folders' ondblclick='open_folder(this)'>
+      <img src='<%= asset_path 'folder.png' %>' alt='folder'>
+      <div><span>Good To Know</span></div>
+    </div>
+
+    <div class='blogs content_folders' ondblclick='open_folder(this)'>
+      <img src='<%= asset_path 'folder.png' %>' alt='folder'>
+      <div><span>Blog</span></div>
+    </div>
+
+    <div class='challenges content_folders' ondblclick='open_folder(this)'>
+      <img src='<%= asset_path 'folder.png' %>' alt='folder'>
+      <div><span>Challenges</span></div>
+    </div>
+
+    <div class='terminal' ondblclick='open_terminal()'>
+      <img src='<%= asset_path 'terminal.png' %>' alt='terminal'>
+      <div><span>Terminal</span></div>
+    </div>
   </div>
-  <div class='blogs' ondblclick='open_folder(this)'>
-    <img src='<%= asset_path 'folder.png' %>' alt='folder'>
-    <div><span>Blog</span></div>
-  </div>
-  <div class='notes' ondblclick='open_folder(this)'>
-    <img src='<%= asset_path 'folder.png' %>' alt='folder'>
-    <div><span>Good To Know</span></div>
-  </div>
-  <div class='challenges' ondblclick='open_folder(this)'>
-    <img src='<%= asset_path 'folder.png' %>' alt='folder'>
-    <div><span>Challenges</span></div>
-  </div>
-  <div id='renderFolder' class='render_folder'></div>
-  <div id='renderTerminal' class='render_terminal'></div>
+
 </div>
 
 <script>
   $('.trash, .terminal, .blogs, .notes, .challenges, .system_disk').draggable();
-  $('window').droppable();
+  // $('window').droppable();
 </script>
