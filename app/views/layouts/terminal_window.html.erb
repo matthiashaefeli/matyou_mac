@@ -1,0 +1,14 @@
+<div class='window'>
+  <div class='window_title'>
+    <span class='bigger_window' onclick='bigger_window(this)'>
+      <i class='far fa-square'></i>
+    </span>
+    <%= @title %>
+    <span class='close_window' onclick='close_window(this)'>
+      <i class='fas fa-square'></i>
+    </span>
+  </div>
+  <div id='terminalWindowContent'>
+    <%= yield %>
+  </div>
+</div>
