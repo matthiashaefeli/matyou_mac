@@ -75,10 +75,21 @@ window.open_terminal = () => {
     method: 'get',
     success: function(response) {
       $('#renderTerminal').html(response);
-      const text = ['Hi', 'kh', 'lkjsdf', 'dddd', 'bbbbb'];
-      // $('.terminal_text').append(word)
-      // Todo: add promise to write the hole text word by word
-
+      const string = "Hi!\
+      I am Mat and this is my notebook. I'm working as a Full Stack Ruby on Rails Developer and here is my journey.\
+      If I struggle with something or learn something new, I write it down here.\
+      My Blog is the result of a little bit more research.\
+      The good to know stuff is a reminder of stuff that I'm using and I do not remember how.\
+      And finally my Coding Challenges. On my journey to learn to code I used a lot of different challenges,\
+      and here are some of them. have fun!"
+      const text = string.split(' ')
+      var index = 0;
+      let interval = setInterval(function(){
+          $('.terminal_text').append(text[index++]).append(' ')
+          if (index == text.length) {
+            clearInterval(interval)
+          }
+      }, 100)
     }
   })
 }
