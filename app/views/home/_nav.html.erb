@@ -1,12 +1,55 @@
 <nav class='navbar'>
-  <div><i class="fab fa-apple fa-lg"></i></div>
-  <div>File</div>
-  <div>Edit</div>
-  <div>View</div>
-  <div>
-    Special
-  </div>
+  <div class='apple_navbar' onclick='show_under_nav(this)'><i class="fab fa-apple fa-lg"></i></div>
+  <div class='file_navbar' onclick='show_under_nav(this)'>File</div>
+  <div class='edit_navbar' onclick='show_under_nav(this)'>Edit</div>
+  <div class='view_navbar' onclick='show_under_nav(this)'>View</div>
+  <div class='special_navbar' onclick='show_under_nav(this)'>Special</div>
   <% if current_user %>
     <div><%= link_to 'out', destroy_user_session_path(current_user), method: 'delete' %></div>
   <% end %>
 </nav>
+<nav class='navbar_under'>
+  <div class='apple_under'>
+    <div>About</div>
+    <div>Shut Down</div>
+  </div>
+  <div class='file_under'>
+    <div>New File</div>
+    <div>New Window</div>
+    <div>Open</div>
+    <div>Save</div>
+  </div>
+  <div class='edit_under'>
+    <div>Undo</div>
+    <div>Redo</div>
+    <div>Cut</div>
+    <div>Copy</div>
+    <div>Paste</div>
+  </div>
+  <div class='view_under'>
+    <div>Open View...</div>
+    <div>Terminal</div>
+    <div>Problems</div>
+  </div>
+  <div class='special_under'>
+    <div>Nothing Special</div>
+  </div>
+</nav>
+
+<script>
+  const adjustment = 30
+  const apple_pos = $('.apple_navbar').offset().left - adjustment
+  $('.apple_under').css({top: 30, left: apple_pos, position:'absolute'});
+
+  const file_pos = $('.file_navbar').offset().left - adjustment
+  $('.file_under').css({top: 30, left: file_pos, position:'absolute'});
+
+  const edit_pos = $('.edit_navbar').offset().left - adjustment
+  $('.edit_under').css({top: 30, left: edit_pos, position:'absolute'});
+
+  const view_pos = $('.view_navbar').offset().left - adjustment
+  $('.view_under').css({top: 30, left: view_pos, position:'absolute'});
+
+  const special_pos = $('.special_navbar').offset().left - adjustment
+  $('.special_under').css({top: 30, left: special_pos, position:'absolute'});
+</script>

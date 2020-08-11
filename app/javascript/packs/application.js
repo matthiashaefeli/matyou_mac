@@ -95,3 +95,13 @@ window.open_terminal = () => {
     }
   })
 }
+
+window.show_under_nav = (div) => {
+  const className = $(div).attr('class').split('_')[0] + '_under'
+  if ($('.' + className).css('display') === 'none') {
+    $('.apple_under, .file_under, .edit_under, .view_under, .special_under').hide();
+    $('.' + className).toggle();
+  } else {
+    $('.' + className).toggle();
+  }
+}
