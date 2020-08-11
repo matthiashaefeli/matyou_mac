@@ -59,7 +59,8 @@ window.bigger_window = (span) => {
 }
 
 window.open_folder = (folder) => {
-  const url = $(folder).attr('class').split(' ')[0];
+  let url = $(folder).attr('class').split(' ')[0];
+  if (url === 'trash') { url = 'home/trash' }
   $.ajax({
     url: url,
     method: 'get',
@@ -81,7 +82,7 @@ window.open_terminal = () => {
       My Blog is the result of a little bit more research.\
       The good to know stuff is a reminder of stuff that I'm using and I do not remember how.\
       And finally my Coding Challenges. On my journey to learn to code I used a lot of different challenges,\
-      and here are some of them. have fun!"
+      and here are some of them. HAVE FUN!"
       const text = string.split(' ')
       var index = 0;
       let interval = setInterval(function(){

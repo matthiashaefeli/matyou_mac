@@ -197,3 +197,15 @@ body {
 .terminal_text {
   margin: 2px;
 }
+
+// trash
+
+.trash_table {
+  width: 90%;
+  font-size: 10px;
+}
+
+.trash_table > thead {
+  background-color: grey;
+}
+
