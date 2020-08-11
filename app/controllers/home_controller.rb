@@ -16,4 +16,8 @@ class HomeController < ApplicationController
     @available = 0
     render layout: 'window'
   end
+
+  def shut
+    render layout: false
+  end
 end

@@ -11,7 +11,7 @@
 <nav class='navbar_under'>
   <div class='apple_under'>
     <div>About</div>
-    <div>Shut Down</div>
+    <div onclick='shut_down()'>Shut Down</div>
   </div>
   <div class='file_under'>
     <div>New File</div>
@@ -37,6 +37,16 @@
 </nav>
 
 <script>
+  function shut_down() {
+    $.ajax({
+      url: '/home/shut',
+      method: 'get',
+      success: function(response) {
+        $(document.body).html(response);
+      }
+    })
+  };
+
   const adjustment = 30
   const apple_pos = $('.apple_navbar').offset().left - adjustment
   $('.apple_under').css({top: 30, left: apple_pos, position:'absolute'});

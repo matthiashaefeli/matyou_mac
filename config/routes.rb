@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get '/home/terminal', to: 'home#terminal'
   get '/home/trash', to: 'home#trash'
   get '/home/system_disk', to: 'home#system_disk'
+  get '/home/shut', to: 'home#shut'
   devise_for :users
   resources :notes
   resources :blogs
