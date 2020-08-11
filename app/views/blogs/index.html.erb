@@ -8,8 +8,10 @@
         <img src='<%= asset_path 'mac_folder.png' %>' alt='folder'>
         <div><span><%= blog.title %></span></div>
       <% end %>
-      <%= link_to blog_path(blog.id), method: 'delete' do %>
-        <i class="fas fa-dumpster"></i>
+      <% if current_user %>
+        <%= link_to blog_path(blog.id), method: 'delete' do %>
+          <i class="fas fa-dumpster"></i>
+        <% end %>
       <% end %>
     </div>
   <% end %>

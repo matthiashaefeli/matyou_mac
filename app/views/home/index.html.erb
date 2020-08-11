@@ -13,7 +13,7 @@
   </div>
 
   <div class='links_2'>
-    <div class='trash'>
+    <div class='trash' ondblclick='open_folder(this)'>
       <img src='<%= asset_path 'trash.png' %>' alt='trash'>
       <div><span>Trash</span></div>
     </div>
@@ -42,6 +42,14 @@
 </div>
 
 <script>
+  $('.trash').droppable({
+    drop: function(event, folder) {
+      const className = folder.draggable.attr('class').split(' ')[0]
+      $('.' + className).html('');
+    }
+  })
+
+
   $('.trash, .terminal, .blogs, .notes, .challenges, .system_disk').draggable();
   open_terminal()
 </script>

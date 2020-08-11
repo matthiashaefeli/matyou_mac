@@ -3,4 +3,9 @@ class HomeController < ApplicationController
     @title = 'Terminal'
     render layout: 'terminal_window'
   end
+
+  def trash
+    @title = 'Trash'
+    render layout: 'window'
+  end
 end

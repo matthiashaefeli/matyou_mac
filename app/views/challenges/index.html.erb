@@ -8,8 +8,10 @@
         <img src='<%= asset_path 'mac_folder.png' %>' alt='folder'>
         <div><span><%= challenge.title %></span></div>
       <% end %>
-      <%= link_to challenge_path(challenge.id), method: 'delete' do %>
-        <i class="fas fa-dumpster"></i>
+      <% if current_user %>
+        <%= link_to challenge_path(challenge.id), method: 'delete' do %>
+          <i class="fas fa-dumpster"></i>
+        <% end %>
       <% end %>
     </div>
   <% end %>
