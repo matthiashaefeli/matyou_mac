@@ -42,13 +42,16 @@
 </div>
 
 <script>
+  $('.home').on('click', function() {
+    $('.apple_under, .file_under, .edit_under, .view_under, .special_under').hide();
+  });
+
   $('.trash').droppable({
     drop: function(event, folder) {
       const className = folder.draggable.attr('class').split(' ')[0]
       $('.' + className).html('');
     }
   })
-
 
   $('.trash, .terminal, .blogs, .notes, .challenges, .system_disk').draggable();
   open_terminal()

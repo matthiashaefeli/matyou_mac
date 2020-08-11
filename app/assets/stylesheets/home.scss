@@ -8,6 +8,7 @@ body {
   font-family: 'chicago'
 }
 
+// navbar
 .navbar {
   width: 100vw;
   margin-left: calc(-50vw + 50%);
@@ -28,6 +29,36 @@ body {
   cursor: pointer;
 }
 
+// navbar under
+.navbar_under {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+}
+
+.navbar_under > div {
+  width: 150px;
+  background-color: white;
+  color: black;
+  margin: 10px 30px;
+}
+
+.navbar_under > div:hover {
+  cursor: pointer;
+}
+
+.apple_under,
+.file_under,
+.edit_under,
+.view_under,
+.special_under {
+  display: none;
+}
+
+
+// 
 .system_disk,
 .trash,
 .terminal,
