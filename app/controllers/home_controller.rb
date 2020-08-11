@@ -8,4 +8,12 @@ class HomeController < ApplicationController
     @title = 'Trash'
     render layout: 'window'
   end
+
+  def system_disk
+    @title = 'System Disk'
+    @count = '1,000,000,000'
+    @infolder = 100
+    @available = 0
+    render layout: 'window'
+  end
 end

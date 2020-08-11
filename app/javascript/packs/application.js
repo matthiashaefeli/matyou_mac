@@ -60,7 +60,8 @@ window.bigger_window = (span) => {
 
 window.open_folder = (folder) => {
   let url = $(folder).attr('class').split(' ')[0];
-  if (url === 'trash') { url = 'home/trash' }
+  if (url === 'trash') { url = 'home/trash' };
+  if (url === 'system_disk') { url = 'home/system_disk' };
   $.ajax({
     url: url,
     method: 'get',
