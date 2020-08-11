@@ -17,13 +17,12 @@ environment.plugins.prepend(
     jquery: 'jquery'
   })
   )
-  
+
   const aliasConfig = {
-    'jquery': 'jquery/src/jquery',
+    'jquery': 'jquery-ui-dist/external/jquery/jquery.js',
     'jquery-ui': 'jquery-ui-dist/jquery-ui.js'
-    
-  };
-  
-  environment.config.set('resolve.alias', aliasConfig);
-  
-  module.exports = environment
+};
+
+environment.config.set('resolve.alias', aliasConfig);
+
+module.exports = environment
