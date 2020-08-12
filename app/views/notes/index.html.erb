@@ -2,6 +2,9 @@
   <% if current_user %>
     <%= link_to 'New', new_note_path, onclick: 'create(event, this)' %>
   <% end %>
+  <div class='search'>
+    <input id='mySearch' type='text' placeholder='Search...'>
+  </div>
   <% @notes.each do |note| %>
     <div class='mac_folder'>
       <%= link_to url_for(note.note_file), target: '_blank', class: 'mac_folder_link' do %>
@@ -16,3 +19,12 @@
     </div>
   <% end %>
 </div>
+
+<script>
+  $('#mySearch').on('keyup', function() {
+    let val = $(this).val().toLowerCase();
+    $('.mac_folder').filter(function() {
+    $(this).toggle($(this).text().toLowerCase().indexOf(val) > -1)
+    });
+  });
+</script>
