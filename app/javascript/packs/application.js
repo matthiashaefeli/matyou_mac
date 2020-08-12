@@ -7,10 +7,19 @@ require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
-import "@fortawesome/fontawesome-free/css/all.css";
 window.$ = $
-
 require("jquery-ui")
+// import "@fortawesome/fontawesome-free/css/all.css";
+import { library, dom } from '@fortawesome/fontawesome-svg-core'
+import { fas } from '@fortawesome/free-solid-svg-icons'
+import { faTwitter } from '@fortawesome/free-brands-svg-icons'
+import { far } from '@fortawesome/free-regular-svg-icons'
+import { FontAwesome } from '@fortawesome/vue-fontawesome'
+
+library.add(far, fas, faTwitter)
+
+dom.watch()
+
 
 window.create = (e, link) => {
   e.preventDefault();
