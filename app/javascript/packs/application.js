@@ -64,8 +64,37 @@ window.open_folder = (folder) => {
     method: 'get',
     success: function(response) {
       $('#renderFolder').html(response)
+      if (url.includes('trash')) {
+        if (!$('.notes').text().includes('Know')) {
+          add_text('Good To Know')
+        };
+        if (!$('.blogs').text().includes('Blog')) {
+          add_text('Blog')
+        };
+        if (!$('.challenges').text().includes('Challenges')) {
+          add_text('Challenges')
+        };
+        if (!$('.terminal').text().includes('Terminal')) {
+          add_text('Terminal')
+        };
+        if (!$('.system_disk').text().includes('System')) {
+          add_text('System Disk')
+        };
+      }
     }
   })
+}
+
+function add_text(text) {
+  const td_text = $('<td></td>');
+  const td_date = $('<td></td>');
+  const td_size = $('<td></td>');
+  const tr = $('<tr></tr>');
+  td_text.html(text)
+  td_date.html(new Date(Date.now()).toLocaleString().split(',')[0].split('/').join('-'))
+  td_size.html('1,234 bytes')
+  tr.append(td_text).append(td_date).append(td_size)
+  $('.trash_table').find('tbody').append(tr)
 }
 
 window.open_terminal = () => {
